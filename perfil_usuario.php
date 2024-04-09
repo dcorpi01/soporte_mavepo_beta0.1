@@ -66,10 +66,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
     <section id="container">
 
         <div class="perfil">
-            <img src="./img/MSF1.png" class="avatar">
-            <br>
-            <br>
+            <img src="./img/LOGO_MAF2024.png" class="avatar" height="120">
             <h1 class="name_user">Perfil del Usuario: <?php echo $_SESSION['name'];?></h1>
+            <br>
         </div>
 
         <br>

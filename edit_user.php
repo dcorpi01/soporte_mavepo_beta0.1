@@ -1,7 +1,7 @@
 <?php
 include("db.php");
 
-if(isset($_POST['id']) && isset($_POST['id'])){
+if(isset($_POST['id']) && isset($_POST['no_empleado']) && isset($_POST['name'])){
     $id10 = intval($_POST['id']);
 
     $sql = "SELECT * FROM users WHERE id=$id10";
@@ -9,7 +9,7 @@ if(isset($_POST['id']) && isset($_POST['id'])){
 
     if($result && mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_array($result)){
-            $no_empleado = $row["no_empleado"];
+            $nemp = $row["no_empleado"];
             $user_name = $row["user_name"];
             $name = $row["name"];
             $sucursal = $row["sucursal"];
@@ -24,7 +24,7 @@ if(isset($_POST['id']) && isset($_POST['id'])){
 <form action="update_user.php" method="POST">
     <div class="form-group">
         <label for="no_empleado">No. de empleado</label>
-        <input type="text" class="form-control" name="no_empleado" id="no_empleado" value="<?php echo $no_empleado;?>">
+        <input type="text" class="form-control" name="no_empleado" id="no_empleado" value="<?php echo $nemp;?>">
     </div>
     <div class="form-group">
         <label for="user_name">Nombre de usuario</label>

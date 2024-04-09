@@ -83,7 +83,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
                                 </td>
                                 <td>
                                 <form action="edit_user.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $id?>">
+                                    <input type="hidden" name="id" value="<?php echo $id10?>">
                                     <button type="submit" name="edit" class="btn btn-secondary">Editar</button>
                                 </form>
                                 </td>

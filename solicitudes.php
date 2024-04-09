@@ -40,9 +40,10 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
       <tr>
         <th>ID</th>
         <th>Nombre Completo</th>
-        <th>Área</th>
-        <th>Tipo</th>
-        <th>Nivel de Urgencia</th>
+        <th>Empresa</th>
+        <th>Sucursal</th>
+        <th>Tipo de Soporte</th>
+        <th>Nivel</th>
         <th>Fecha de Creación</th>
         <th>Descripción</th>
         <th>Estado</th>
@@ -84,9 +85,10 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
 
         <?php $id1=$data['id'] ?>
         <?php $nombre1=$data['nombre'] ?>
-        <?php $area1 = $data['area'] ?>
-        <?php $tipo1 = $data['tipo']?>
-        <?php $nivel1 = $data['nivel']?>
+        <?php $empresa = $data['empresa'] ?>
+        <?php $sucursal = $data['sucursal']?>
+        <?php $tipo1 = $data['tipo_soporte']?>
+        <?php $nivel1 = $data['urgencia']?>
         <?php $fecha1 = $data['fecha']?>
         <?php $desc1 = $data['descripcion']?>
         <?php $fechaac = $data['fechaac']?>
@@ -96,8 +98,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
       <tr>
         <td class="align-top table-light" style="font-weight: bold;"><?php echo $id1?></td>
         <td class="align-top table-light"><?php echo $nombre1?></td>
-        <td class="align-top table-light" style="font-weight: bold;"><?php echo $area1?></td>
-        <td class="align-top table-light"><?php echo $tipo1?></td>
+        <td class="align-top table-light" style="font-weight: bold;"><?php echo $empresa?></td>
+        <td class="align-top table-light"><?php echo $sucursal?></td>
+        <td class="align-top table-light" style="font-weight: bold;"><?php echo $tipo1?></td>
         <td class="align-top table-light"><?php echo $nivel1?></td>
         <td class="align-top table-light" style="font-weight: bold;"><?php echo $fecha1?></td>
         <td class="align-top table-light"><?php echo $desc1?></td>
@@ -114,7 +117,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
                     <input style="display:none;" type="radio" id="id_final" name="id_final" value="<?php echo $id1; ?>" checked hidden>
                         
                 <div class="col-sm-6">
-                    <input type="submit" name="save" class="btn btn-outline-dark" style="margin: 0 auto; margin-top: 3px;" value="Guardar">
+                    <input type="submit" name="save" class="btn btn-dark" style="margin-left: 20px; margin-top: 3px;" value="Guardar">
                 </div>
             </form>
         </td>
@@ -132,8 +135,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
           ?>
         </td>
         
-        <td class="align-top table-light"><?php echo $fechaac?></td>
-        <td style="font-weight: bold;" class="align-top table-light"><?php echo $fechaacu?></td>
+        <td class="align-center table-light"><?php echo $fechaac?></td>
+        <td style="font-weight: bold;" class="align-center table-light"><?php echo $fechaacu?></td>
       </tr>
     </tbody>
     <?php
