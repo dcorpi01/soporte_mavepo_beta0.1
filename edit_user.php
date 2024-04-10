@@ -8,12 +8,13 @@ if(isset($_POST['id']) && isset($_POST['no_empleado']) && isset($_POST['name']))
     $result = mysqli_query($conn, $sql);
 
     if($result && mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){
-            $nemp = $row["no_empleado"];
-            $user_name = $row["user_name"];
-            $name = $row["name"];
-            $sucursal = $row["sucursal"];
-            $area = $row["area"];
+        while($row_usr = mysqli_fetch_array($result)){
+            $id10 = $row_usr['id'];
+            $nemp = $row_usr['no_empleado'];
+            $uname = $row_usr['user_name'];
+            $name = $row_usr['name'];
+            $suc = $row_usr['sucursal'];
+            $area = $row_usr['area'];
         }
     }
 }
@@ -28,7 +29,7 @@ if(isset($_POST['id']) && isset($_POST['no_empleado']) && isset($_POST['name']))
     </div>
     <div class="form-group">
         <label for="user_name">Nombre de usuario</label>
-        <input type="text" class="form-control" name="user_name" id="user_name" value="<?php echo $user_name;?>">
+        <input type="text" class="form-control" name="user_name" id="user_name" value="<?php echo $uname;?>">
     </div>
     <div class="form-group">
         <label for="name">Nombre</label>

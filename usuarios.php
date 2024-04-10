@@ -47,7 +47,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
                     <th>Sucursal</th>
                     <th>Área</th>
                     <th>Eliminar</th>
-                    <th>Editar</th>
+                    <!--<th>Editar</th>-->
                 </tr>
             </thead>
 
@@ -81,12 +81,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
                                     <button type="submit" name="delete_usr" class="btn btn-danger">Borrar</button>
                                 </form>
                                 </td>
-                                <td>
+                                <!--<td>
                                 <form action="edit_user.php" method="post">
-                                    <input type="hidden" name="id" value="<?php echo $id10?>">
+                                    <input type="hidden" name="id" value="<?php # echo $id10?>">
                                     <button type="submit" name="edit" class="btn btn-secondary">Editar</button>
                                 </form>
-                                </td>
+                                </td>-->
                             </tr>
                         </div>
                     </div>
