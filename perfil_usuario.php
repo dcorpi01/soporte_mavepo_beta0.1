@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['id_cargo']) && isset($_SESSION['area'])){
+if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['id_cargo']) && isset($_SESSION['area']) && isset($_SESSION['sucursal'])){
 
 ?>
 
@@ -92,6 +92,14 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['i
         <div class="input-group">
             <input type="text" class="form-control" id="basic-url" value="<?php echo $_SESSION['area'];?>" aria-describedby="basic-addon3 basic-addon4" disable readonly>
         </div>
+
+        <div class="mb-3">
+            <br>
+            <label for="basic-url" class="form-label" id="basic-url">Sucursal: </label>
+        <div class="input-group">
+            <input type="text" class="from-control" id="basic-url" value="<?php echo $_SESSION['sucursal']?>" aria-describedby="basic-addon3 basic-addon4" disable readonly>
+        </div>
+        
         <div class="cambio-contrasena">
             <h3>¿Necesitas cambiar tu contraseña?</h3>
             <p>Si deseas cambiar tu contraseña, puedes hacerlo <a href="./contraseña.php">aquí</a>.</p>

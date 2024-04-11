@@ -22,19 +22,6 @@ if(isset($_POST['save_usr'])){
         die("Query Failed");
     }
 
-        // Enviar alerta por correo electrónico
- $to = 'david.corpi@mavepo.com.mx'; // Cambia esto por tu dirección de correo
- $subject = 'Nuevo Uusario Registrado';
- $message = 'Se ha realizado una nueva alta de usuario en la plataforma.';
- $headers = 'From: sistemas3@mavepo.com.mx' . "\r\n" .
-     'Reply-To: sistemas3@mavepo.com.mx' . "\r\n" .
-     'X-Mailer: PHP/' . phpversion();
-
- mail($to, $subject, $message, $headers);
-
-    header("Location: usuarios.php");
-
-
 }
 
 

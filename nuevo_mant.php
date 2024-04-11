@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>SOPORTE MAVEPO</title>
-        <link rel="shortcut icon" href="img/MSF.png" type="image/x-icon">
+        <link rel="shortcut icon" href="./img/LOGO_MAF2024.png" type="image/x-icon">
         <a href="./welcome.php">
             <link rel="shortcut icon" href="./img/logo_verden.ico" type="image/x-icon">
         </a>
@@ -149,7 +149,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['
             <br>
 
             <div class="citas">
-                <h1 class="citas_th">Registro de Mantenimientos a Equipos de Cómputo</h1>
+                <h1 class="citas_th">Registro de Mantenimiento a Equipos de Cómputo</h1>
             </div>
 
             <br>
@@ -170,13 +170,43 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name']) && isset($_SESSION['
 
                     </div>
 
+                    <label for="basic-par" class="form-label">Datos del Equipo: </label>
+
                     <div class="input-group mb-3">
 
                         <span class="input-group-text" id="basic-addon1" disabled>ID del Equipo: </span>
                         <input type="text" name="user_name" class="form-control" aria-describedby="bassic-addon2">
 
-                        <span class="input-group-text" id="basic-addon1" disabled>Marca del Equipo: </span>
-                        <input type="text" name="user_name" class="form-control" aria-describedby="bassic-addon2">
+                        <div class="input-group mb-3">
+
+                        <?php 
+
+                            $query = mysqli_query($conn, "SELECT * FROM marcas_ec");
+                            $result = mysqli_num_rows($query);
+                
+                        ?>
+
+                        </div>
+
+                        
+                        <span class="input-group-text" id="basic-addon1">Marca del Equipo: </span>
+                        <select class="form-select" name="marca" aria-label="Default select example">
+
+                            <option selected>Seleccionar ---</option>
+                    
+                            <?php
+                    
+                                if($result){
+                                    while ($deptto = mysqli_fetch_array($query)){
+                                ?>
+                                    <option value="<?php echo $deptto["marca"]; ?>"><?php echo $deptto["marca"]; ?></option>
+                                <?php
+                            }
+                        }
+                    
+                    ?>
+                    
+                </select>
 
                     </div>
 
